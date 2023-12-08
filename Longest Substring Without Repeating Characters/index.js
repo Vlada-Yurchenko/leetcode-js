@@ -1,3 +1,4 @@
+// use Sliding Window Algorithm
 const lengthOfLongestSubstring = function (s) {
     let set = new Set()
     let max = 0
