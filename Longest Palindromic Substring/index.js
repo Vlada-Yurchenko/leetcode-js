@@ -6,7 +6,12 @@ const longestPalindrome = function(s) {
     let rightIdx = 0;
 
     for (let i = 1; i < str.length - 1; i++) {
-        while(str[i - 1 - radiusArr[i]] === str[i + 1 + radiusArr[i]]) {
+        if (i < rightIdx) {
+            const mirrorIdx = 2 * pointerIdx - i;
+            radiusArr[i] = Math.min(rightIdx - i, radiusArr[mirrorIdx])
+        }
+
+        while (str[i - 1 - radiusArr[i]] === str[i + 1 + radiusArr[i]]) {
             radiusArr[i]++;
         }
 
